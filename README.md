@@ -2,6 +2,8 @@
 
 [![Invítame a un café en Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/johanderohan)
 
+Ficha del proyecto, capturas y más traducciones al castellano en **[Parches en Castellano](https://parchesencastellano.com/traducciones/nintendo-3ds/shin-megami-tensei-devil-survivor-overclocked)**.
+
 Traducción al **español de España** de *Shin Megami Tensei: Devil Survivor Overclocked* (Nintendo 3DS, Atlus, 2011), que nunca salió en español. Se ha hecho sobre la **edición americana en inglés** (Rev 1); no es una traducción directa del japonés. Es la precuela de *Devil Survivor 2 Record Breaker*, que también hemos traducido, y comparte su terminología.
 
 Se distribuye como parche **XDELTA** para crear una ROM `.3ds` ya traducida. Necesitas tu propia copia del juego: la descarga no incluye ninguna ROM.
@@ -40,9 +42,9 @@ En **[Releases](../../releases)** (versión 1.0):
 
 | Fichero | Para qué | SHA-256 |
 |---|---|---|
-| `dso-es-v1.0.xdelta` | **Opción A (recomendada):** parche de la ROM completa | `67cf59f26403c87234fafcb939ae7694dad4d27690d7f44cdb5b72b80af39bec` |
-| `dso-es-v1.0-romfs.xdelta` | Opción B: parche solo de los datos del juego | `4331cc8c9ded102ec2bab231202a7b1a66b48c1e49cc60c931efa1ef185aec18` |
-| `dso-es-v1.0-ejecutable.zip` | Opción B: parche del ejecutable para Luma (consola) y Azahar | `beaf77ddf50fe40e3304e1ed1776ee550a5c973abb66957bbc1cd28a51715437` |
+| `dso-es-v1.0.xdelta` | **Opción A (recomendada):** parche de la ROM completa | `c6bf3dda187d802d2e70b3678eaa0b2305c2a15e39ffe1b509a844c4f42599e8` |
+| `dso-es-v1.0-romfs.xdelta` | Opción B: parche solo de los datos del juego | `0076f39923ddf963e58fdcddc7718c8e3c3b6d4e337f9b7ccb4f7dc2f1d8bf8d` |
+| `dso-es-v1.0-ejecutable.zip` | Opción B: parche del ejecutable para Luma (consola) y Azahar | `482602c9260cd722a2edb42097dd9d588bfbc4429b729c3786d950510dcce5be` |
 
 La opción A lo hace todo en un paso. La opción B separa los datos del juego y el ejecutable, y solo lleva nuestros cambios; necesita **las dos piezas**: sin la carpeta del ejecutable, el diálogo sale en castellano pero los menús, habilidades y correos salen en inglés y las letras con tilde quedan mal espaciadas.
 
@@ -66,12 +68,12 @@ Comprueba primero el MD5 de tu ROM (`md5sum`, `md5` o `CertUtil -hashfile … MD
 
 1. Aplica `dso-es-v1.0.xdelta` con [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases) o con
    `xdelta3 -d -s "ROM original.3ds" dso-es-v1.0.xdelta "ROM traducida.3ds"`.
-2. La ROM traducida debe tener MD5 `4d6f1829c0220f0f0209b3464cfedc55`.
+2. La ROM traducida debe tener MD5 `ab4cfd07b08a9de541408e1f1cc66af3`.
 3. **Emulador (Azahar):** ábrela tal cual. **Consola:** cárgala como cualquier `.3ds` o conviértela en CIA (por ejemplo, con GodMode9: *Build CIA from file*) e instálala con FBI.
 
 ### B. Datos + ejecutable por separado
 
-1. Aplica `dso-es-v1.0-romfs.xdelta` a la ROM original igual que en A. El resultado debe tener MD5 `a0c67a77ffa839da7eb4ad0c74e1912b`.
+1. Aplica `dso-es-v1.0-romfs.xdelta` a la ROM original igual que en A. El resultado debe tener MD5 `d04fee7f4c93f0e334e60e2eedf93dcb`.
 2. Extrae `dso-es-v1.0-ejecutable.zip`:
    - **Consola (Luma3DS):** copia la carpeta `luma` a la raíz de la SD (debe quedar `luma/titles/0004000000038800/code.ips` y `exheader.bin`), enciende con **SELECT** pulsado, activa **Enable game patching** y guarda.
    - **Azahar:** clic derecho en el juego → **Open Mods Location** y copia ahí el contenido de `azahar/load/mods/0004000000038800/` (la carpeta `exefs` y `exheader.bin`).
